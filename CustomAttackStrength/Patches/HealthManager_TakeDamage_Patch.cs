@@ -18,6 +18,11 @@ namespace CustomAttackStrength.Patches
         {
             if (__instance == null || __instance.gameObject == null || __instance.gameObject.name == null)
                 return true;
+                
+            if (!hitInstance.IsHeroDamage)
+            {
+                return true;
+            }
 
             int initHp = initHpRef(__instance);
             LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} taking damage={hitInstance.DamageDealt} initHp={initHp}");
