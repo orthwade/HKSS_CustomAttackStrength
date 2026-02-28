@@ -72,6 +72,11 @@ namespace owd.CustomOutputDamage
             var config = RedToolMultipliers.Find(c => c.ToolItem_ == tool);
             return config != null ? config.Multiplier.Value : 1f;
         }
+        public static float GetParryMultiplier()
+        {
+            var config = SkillMultipliers.Find(c => c.ToolItem_.name == ToolLibrary.ParryInternalName);
+            return config != null ? config.Multiplier.Value : 1f;
+        }
 
         public static void Init(ConfigFile config)
         {

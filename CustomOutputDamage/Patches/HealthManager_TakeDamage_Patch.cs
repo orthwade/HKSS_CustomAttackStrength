@@ -48,7 +48,7 @@ namespace owd.CustomOutputDamage.Patches
                     else if (hitInstance.RepresentingTool.Type == ToolItemType.Red)
                     {
                         LogInfo($"[HealthManager_TakeDamage_Patch] Tool name={hitInstance.RepresentingTool.DisplayName}");
-                        
+
                         hitInstance.Multiplier *= Configuration.GetMultiplierTools();
                         hitInstance.Multiplier *= Configuration.GetRedToolMultiplier(hitInstance.RepresentingTool);
 
@@ -59,6 +59,11 @@ namespace owd.CustomOutputDamage.Patches
                 {
                     hitInstance.Multiplier *= Configuration.GetMultiplierNeedle();
                     LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} needle multiplier={hitInstance.Multiplier}");
+                    if(CachedObjects.HeroController_ != null && CachedObjects.HeroController_.IsParrying())
+                    {
+                        hitInstance.Multiplier *= Configuration.GetParryMultiplier();
+                        LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} parry multiplier={hitInstance.Multiplier}");
+                    }
                 }
                 if (owd.BossNames.IsBossName(__instance.gameObject.name))
                 {

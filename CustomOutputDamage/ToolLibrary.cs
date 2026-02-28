@@ -13,6 +13,8 @@ namespace owd.CustomOutputDamage
         public static readonly HashSet<ToolItem> Skills = new();
         public static readonly HashSet<ToolItem> RedTools = new();
 
+        public static readonly string ParryInternalName = "Parry";
+
         private static bool initialized = false;
 
         public static void Init()

@@ -16,6 +16,8 @@ namespace owd.CustomOutputDamage.Patches
             
             ToolLibrary.Init();
             ToolLibrary.PrintAllTools();
+
+            CachedObjects.HeroController_ = __instance;
         }
     }
 }
