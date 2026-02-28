@@ -59,7 +59,7 @@ namespace owd.CustomOutputDamage.Patches
                 {
                     hitInstance.Multiplier *= Configuration.GetMultiplierNeedle();
                     LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} needle multiplier={hitInstance.Multiplier}");
-                    if(CachedObjects.HeroController_ != null && CachedObjects.HeroController_.IsParrying())
+                    if(CachedObjects.HeroController_ != null && CachedObjects.HeroController_.cState.parryAttack)
                     {
                         hitInstance.Multiplier *= Configuration.GetParryMultiplier();
                         LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} parry multiplier={hitInstance.Multiplier}");
