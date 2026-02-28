@@ -43,6 +43,10 @@ namespace owd.CustomOutputDamage
                 )
             };
             SkillMultipliers.Add(skillConfig);
+            if(tool.name == ToolLibrary.ParryInternalName)
+            {
+                CachedParryConfig = skillConfig;
+            }
         }
         public static void InitRedTool(ConfigFile config, ToolItem tool)
         {
@@ -72,10 +76,11 @@ namespace owd.CustomOutputDamage
             var config = RedToolMultipliers.Find(c => c.ToolItem_ == tool);
             return config != null ? config.Multiplier.Value : 1f;
         }
+        private static ToolMultiplierConfig CachedParryConfig = null;
+
         public static float GetParryMultiplier()
         {
-            var config = SkillMultipliers.Find(c => c.ToolItem_.name == ToolLibrary.ParryInternalName);
-            return config != null ? config.Multiplier.Value : 1f;
+            return CachedParryConfig != null ? CachedParryConfig.Multiplier.Value : 1f;
         }
 
         public static void Init(ConfigFile config)
