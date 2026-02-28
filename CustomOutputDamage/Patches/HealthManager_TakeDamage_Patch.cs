@@ -38,15 +38,21 @@ namespace owd.CustomOutputDamage.Patches
                 {
                     if (hitInstance.RepresentingTool.Type == ToolItemType.Skill)
                     {
+                        LogInfo($"[HealthManager_TakeDamage_Patch] Skill name={hitInstance.RepresentingTool.DisplayName}");
+
                         hitInstance.Multiplier *= Configuration.GetMultiplierSkills();
+                        hitInstance.Multiplier *= Configuration.GetSkillMultiplier(hitInstance.RepresentingTool);
+
                         LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} skill multiplier={hitInstance.Multiplier}");
-                        LogInfo($"[HealthManager_TakeDamage_Patch] Skill name={hitInstance.RepresentingTool.name}");
                     }
                     else if (hitInstance.RepresentingTool.Type == ToolItemType.Red)
                     {
+                        LogInfo($"[HealthManager_TakeDamage_Patch] Tool name={hitInstance.RepresentingTool.DisplayName}");
+                        
                         hitInstance.Multiplier *= Configuration.GetMultiplierTools();
+                        hitInstance.Multiplier *= Configuration.GetRedToolMultiplier(hitInstance.RepresentingTool);
+
                         LogInfo($"[HealthManager_TakeDamage_Patch] {__instance.gameObject.name} tool multiplier={hitInstance.Multiplier}");
-                        LogInfo($"[HealthManager_TakeDamage_Patch] Tool name={hitInstance.RepresentingTool.name}");
                     }
                 }
                 else if (hitInstance.IsUsingNeedleDamageMult)
