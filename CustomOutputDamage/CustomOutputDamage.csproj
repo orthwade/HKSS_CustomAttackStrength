@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net48</TargetFramework>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
     <OutputType>Library</OutputType>
   </PropertyGroup>
@@ -24,6 +24,10 @@
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
       <HintPath>libs\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="TeamCherry.Localization">
+      <HintPath>libs\TeamCherry.Localization.dll</HintPath>
       <Private>false</Private>
     </Reference>
 

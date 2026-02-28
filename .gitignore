@@ -58,4 +58,4 @@ desktop.ini
 *.dll
 **/*.dll
 
-/CustomAttackStrength/libs/ConfigurationManager/
+/CustomOutputDamage/libs/ConfigurationManager/

@@ -4,7 +4,7 @@ using System;
 
 namespace owd
 {
-    public static class BepinexPluginLogger
+    public static class PluginLogger
     {
         private static bool enableLogging = true;
         private static ManualLogSource? logger = null;
