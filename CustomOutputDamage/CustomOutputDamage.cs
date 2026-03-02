@@ -3,7 +3,7 @@ using HarmonyLib;
 
 namespace owd.CustomOutputDamage
 {
-    [BepInPlugin("com.orthwade.CustomOutputDamage", "Custom Output Damage", "1.1.0")]
+    [BepInPlugin("com.orthwade.CustomOutputDamage", "Custom Output Damage", "1.1.1")]
     public class CustomOutputDamage : BaseUnityPlugin
     {
         internal static CustomOutputDamage Instance;
